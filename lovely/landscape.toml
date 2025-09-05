@@ -1,0 +1,15 @@
+# Forces the game to run landscape
+[manifest]
+version = "1.0.0"
+priority = 0
+
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = "resizable = true,"
+position = "at"
+payload = "resizable = not (love.system.getOS() == 'Android' or love.system.getOS() == 'iOS'),"
+match_indent = true
+times = 1
+
+
